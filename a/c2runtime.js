@@ -22605,8 +22605,9 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.newline,
 	cr.system_object.prototype.cnds.CompareVar,
 	cr.plugins_.Touch.prototype.cnds.OnTapGesture,
-	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
+	cr.plugins_.Touch.prototype.cnds.OnTouchObject,
 	cr.behaviors.EightDir.prototype.acts.SimulateControl,
-	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked
+	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
+	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject
 ];};
 
