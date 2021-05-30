@@ -24152,6 +24152,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio.prototype.acts.Stop,
 	cr.plugins_.Audio.prototype.acts.Play,
 	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
-	cr.system_object.prototype.cnds.OnLoadFinished
+	cr.system_object.prototype.cnds.CompareTime
 ];};
 
