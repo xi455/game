@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(154, 186, 214);
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    font-family: '標楷體';
+}
+
+h2 {
+    /* display: inline-block; */
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 30px;
+}
+
+
+input {
+
+    font-family: '標楷體';
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+button {
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}

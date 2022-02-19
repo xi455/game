@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <h1>終極密碼</h1>
+    <form action="">
+        <h2 style="display: none;">hello</h2>
+        <input type="text" placeholder="請輸入最大值"><br>
+        <input style="display: none;" class="inp" type="text" placeholder="請輸入猜想值"><br>
+        <button type="reset">確定</button>
+        <button style="display:none;" class="but" type="reset">確定</button>
+    </form>
+
+    <script>
+
+        let small_num = 1
+        let big_num = 0
+        let val = 0
+
+        document.querySelector('button').addEventListener('click', function () {
+
+            big_num = document.querySelector('input').value
+            console.log(big_num)
+
+            document.querySelector('h2').style.display = 'block'
+            document.querySelector('input').style.display = 'none'
+            document.querySelector('button').style.display = 'none'
+            document.querySelector('.inp').style.display = 'inline'
+            document.querySelector('.but').style.display = 'inline'
+
+            document.querySelector('h2').innerText = small_num + ' - ' + big_num
+            val = parseInt(Math.random() * (big_num - 2)) + 2
+            console.log(val)
+        })
+
+        document.querySelector('.but').addEventListener('click', function () {
+            let num = parseInt(document.querySelector('.inp').value
+            )
+            if (num > small_num && num < val) {
+                small_num = num
+                document.querySelector('h2').innerText = small_num + ' - ' + big_num
+            } else if (num > val && num < big_num) {
+                big_num = num
+                document.querySelector('h2').innerText = small_num + ' - ' + big_num
+            } else if (num == val) {
+                alert('game over')
+                window.location = location
+            }
+        })
+    </script>
+</body>
+
+</html>
