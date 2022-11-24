@@ -51,10 +51,10 @@
             }
         }
 
-        group_array.forEach(element => {
+        group_array.forEach((element, index) => {
             let h1_txt = document.createElement('div')
             h1_txt.className = 'text'
-            h1_txt.innerHTML = `<h1>${element}</h1>`
+            h1_txt.innerHTML = `<h1>第${index + 1}組 ${element}</h1>`
             body.append(h1_txt)
         });
 
