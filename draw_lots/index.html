@@ -27,6 +27,13 @@
     let group_num = document.querySelector(".group_num")
     let body = document.querySelector("body")
 
+    body.addEventListener('keydown', function (e) {
+        if (e.key == 'Enter') {
+            rd()
+        }
+        // console.log(e.key)
+    })
+
     function rd() {
         $('.text').remove()
         let group = []
@@ -60,12 +67,12 @@
 
         let ans = val_array.filter(val => overall.indexOf(val) == -1)
 
-        ans.forEach(element => {
-            let h1_txt = document.createElement('div')
-            h1_txt.className = 'text'
-            h1_txt.innerHTML = `<h1>${element}</h1>`
-            body.append(h1_txt)
-        });
+
+        let h1_txt = document.createElement('div')
+        h1_txt.className = 'text'
+        h1_txt.innerHTML = `<h1>${ans}</h1>`
+        body.append(h1_txt)
+
     }
 
 
