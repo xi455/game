@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <input type="text" class="people_start" placeholder="第一號">
+    <input type="text" class="people_end" placeholder="最後號">
+    <input type="text" class="people_num" placeholder="組別人數">
+    <input type="text" class="group_num" placeholder="組別數">
+
+    <button onclick="rd()">抽</button>
+</body>
+
+<script>
+    let people_start = document.querySelector(".people_start")
+    let people_end = document.querySelector(".people_end")
+    let people_num = document.querySelector(".people_num")
+    let group_num = document.querySelector(".group_num")
+    let body = document.querySelector("body")
+
+    function rd() {
+        $('.text').remove()
+        let group = []
+        let overall = []
+        let group_array = []
+
+        let val_array = []
+        for (let i = parseInt(people_start.value); i <= parseInt(people_end.value); i++) {
+            val_array.push(i)
+        }
+
+        while (group_array.length < parseInt(group_num.value)) {
+            let count = val_array[parseInt(Math.random() * val_array.length)]
+            if (group.length < parseInt(people_num.value)) {
+                if (overall.indexOf(count) == -1) {
+                    group.push(count)
+                    overall.push(count)
+                }
+            } else {
+                group_array.push(group)
+                group = []
+            }
+        }
+
+        group_array.forEach(element => {
+            let h1_txt = document.createElement('div')
+            h1_txt.className = 'text'
+            h1_txt.innerHTML = `<h1>${element}</h1>`
+            body.append(h1_txt)
+        });
+
+        let ans = val_array.filter(val => overall.indexOf(val) == -1)
+
+        ans.forEach(element => {
+            let h1_txt = document.createElement('div')
+            h1_txt.className = 'text'
+            h1_txt.innerHTML = `<h1>${element}</h1>`
+            body.append(h1_txt)
+        });
+    }
+
+
+</script>
+
+</html>
